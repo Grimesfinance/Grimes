@@ -1,0 +1,29 @@
+class GrimesFinance:
+    def __init__(self):
+        self.letter_mapping = {
+            'A': 'Α', 'B': 'Β', 'C': 'Ψ', 'D': 'Δ', 'E': 'Ε',
+            'F': 'Φ', 'G': 'Γ', 'H': 'Η', 'I': 'Ι', 'J': 'Ι',
+            'K': 'Κ', 'L': 'Λ', 'M': 'Μ', 'N': 'Ν', 'O': 'Ο',
+            'P': 'Π', 'Q': 'Θ', 'R': 'Ρ', 'S': 'Σ', 'T': 'Τ',
+            'U': 'Υ', 'V': 'Ω', 'W': 'Ω', 'X': 'Χ', 'Y': 'Υ',
+            'Z': 'Ζ'
+        }
+        self.number_mapping = {
+            '1': 'Ι', '2': 'Β', '3': 'Γ', '4': 'Δ', '5': 'Ε',
+            '6': 'Ϛ', '7': 'Ζ', '8': 'Η', '9': 'Θ', '0': 'Ο'
+        }
+
+    def to_greek_letters(self, text):
+        return ''.join(self.letter_mapping.get(char.upper(), char) for char in text)
+
+    def to_greek_numbers(self, number):
+        return ''.join(self.number_mapping.get(char, char) for char in str(number))
+
+# Example usage:
+converter = GrimesFinance()
+english_text = "Hello World 123"
+greek_text = converter.to_greek_letters(english_text)
+greek_numbers = converter.to_greek_numbers("123")
+
+print(f"English to Greek Letters: {greek_text}")
+print(f"Arabic to Greek Numbers: {greek_numbers}")
