@@ -1,0 +1,50 @@
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class GrimesFinanceCalculator extends AppCompatActivity {
+    // UI elements
+    private EditText expressionInput;
+    private Button calculateButton;
+    private Button graphButton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calculator); // Make sure to create a corresponding XML layout
+
+        expressionInput = findViewById(R.id.expression_input);
+        calculateButton = findViewById(R.id.calculate_button);
+        graphButton = findViewById(R.id.graph_button);
+
+        // Set up the button to handle calculations
+        calculateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: Implement calculation logic
+                calculateExpression(expressionInput.getText().toString());
+            }
+        });
+
+        // Set up the button to handle graphing
+        graphButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: Implement graphing functionality
+                drawGraph(expressionInput.getText().toString());
+            }
+        });
+    }
+
+    private void calculateExpression(String expression) {
+        // This method should handle the parsing of the expression
+        // and perform the calculations.
+    }
+
+    private void drawGraph(String expression) {
+        // This method should handle the parsing of the expression
+        // and utilize a graphing library to display the graph.
+    }
+}
